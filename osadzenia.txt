@@ -4,10 +4,3 @@ c Y
 d a
 X c
 Y Y
-
-a a
-b X
-c d
-d X
-X c
-Y Y
