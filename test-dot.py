@@ -14,6 +14,7 @@ plt.savefig('L.png')
 nx.draw(P, with_labels=True)
 plt.savefig('P.png')
 '''
+
 lbls = dict(nx.get_node_attributes(G,'label'))
 print(lbls)
 
