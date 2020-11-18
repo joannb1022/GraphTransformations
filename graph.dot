@@ -1,0 +1,6 @@
+graph graphname {
+    X -- a;
+    X -- b;
+    X -- c;
+    X -- d;
+}
