@@ -8,7 +8,7 @@ with open("test.txt") as file_in:
 
         line = file_in.readline()
         n = int(line)
-        with open("osadzenia.txt", "w") as settleFile:
+        with open("rules.txt", "w") as settleFile:
 
             for i in range(n):
                 name_L = "L%s.dot" % str(i)

@@ -1,24 +1,24 @@
 graph graphname {
-    n1 [label = 'X'];
-    n2 [label = 'a'];
-    n3 [label = 'b'];
-    n4 [label = 'c'];
-    n5 [label = 'd'];
-    n1 -- n2;
-    n1 -- n3;
-    n1 -- n4;
-    n1 -- n5;
+    1 [label = "X"];
+    2 [label = "a"];
+    3 [label = "b"];
+    4 [label = "c"];
+    5 [label = "d"];
+    1 -- 2;
+    1 -- 3;
+    1 -- 4;
+    1 -- 5;
 }
 
 1
 graph L {
-    l1 [label = 'X'];
+    l1 [label = "X"];
 }
 
 graph R {
-    r1 [label = 'Y'];
-    r2 [label = 'a'];
-    r3 [label = 'c'];
+    r1 [label = "Y"];
+    r2 [label = "a"];
+    r3 [label = "c"];
     r1 -- r2;
     r1 -- r3;
 }

@@ -1,7 +1,0 @@
-graph R {
-    r1 [label = 'Y'];
-    r2 [label = 'a'];
-    r3 [label = 'c'];
-    r1 -- r2;
-    r1 -- r3;
-}
