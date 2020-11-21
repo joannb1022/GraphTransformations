@@ -1,0 +1,6 @@
+a Y
+b c
+c Y
+d a
+X c
+Y Y

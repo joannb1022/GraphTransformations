@@ -1,0 +1,3 @@
+graph L {
+    l1 [label = "X"];
+}
