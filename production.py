@@ -54,3 +54,4 @@ def production(productions, rules, G, N, i):
     lbls = dict(nx.get_node_attributes(F, 'label'))
     print(lbls)
     print(list(F.edges()))
+    #i chyba ma zwracać F
