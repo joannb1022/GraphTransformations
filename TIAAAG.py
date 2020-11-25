@@ -7,7 +7,7 @@ from statistics import *
 N = parse("test.txt")
 
 # G - initial graph
-G = read_dot("graph.dot")
+G = read_dot("data/graph.dot")
 
 # read productions to list of tuples [(Left-side, Right-side)]
 productions = get_prod_func(N)

@@ -3,14 +3,14 @@ from networkx.drawing.nx_agraph import read_dot
 
 def parse(file):
     with open(file) as file_in:
-        with open("graph.dot", "w") as graph:
+        with open("data/graph.dot", "w") as graph:
             line = file_in.readline()
             while line.strip('\n') not in "--":
                 graph.write(line)
                 line = file_in.readline()
         line = file_in.readline()
 
-        with open("left_sides.txt", "w") as file_L, open("rules.txt", "w") as settleFile:
+        with open("data/left_sides.txt", "w") as file_L, open("data/rules.txt", "w") as settleFile:
             while line != "":
                 prod_num = int(line)
                 line = file_in.readline()  # to jest tak naokoło xd
@@ -19,7 +19,7 @@ def parse(file):
                 file_L.write(line)
                 file_L.write("\n")
 
-                name_P = "P%s.dot" % str(prod_num)
+                name_P = "data/P%s.dot" % str(prod_num)
                 with open(name_P, "w") as file_P:
                     line = file_in.readline()
                     if line.strip('\n') in "--":
@@ -38,7 +38,7 @@ def parse(file):
 
 def get_rules_func(N):
     rules = [{} for _ in range(N)]
-    rules_file = "rules.txt"
+    rules_file = "data/rules.txt"
     with open(rules_file) as f:
         for i in range(N):
             line = f.readline()
@@ -54,12 +54,12 @@ def get_prod_func(N):
 
     prod = [[0 for _ in range(2)] for _ in range(N)]
     i = 0
-    with open("left_sides.txt", "r") as left:
+    with open("data/left_sides.txt", "r") as left:
         while i < N:
             for label in left:
                 if label not in "\n":
                     prod[i][0] = label.strip('\n')
-                    filename = "P%s.dot" % str(i + 1)
+                    filename = "data/P%s.dot" % str(i + 1)
                     P = read_dot(filename)
                     prod[i][1] = P
                     i += 1
