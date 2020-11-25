@@ -2,18 +2,18 @@ import networkx as nx
 import matplotlib as plt
 
 
-def draw(G, name):
+def draw(G, filename):
     plt.clf()
     labels = nx.get_node_attributes(G, 'label')
     nx.draw(G, node_size=500, labels=labels)
     plt.draw()
-    plt.savefig(name, format="PNG")
+    plt.savefig(filename, format="PNG")
 
 
 # average degree of all nodes
 def avg_degree_all(G):
     degs = nx.degree(G)
-    deg = list(map((lambda tup : tup[1]),degs))
+    deg = list(map((lambda tup: tup[1]), degs))
     return round(sum(deg) / len(deg), 2)
 
 
