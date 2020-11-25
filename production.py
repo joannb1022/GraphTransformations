@@ -20,7 +20,7 @@ def production(productions, rules, G, N, i):
 
     for i in range(len(lbls)):
 
-        if val[i] == leftside_node.strip('"'):
+        if val[i] == leftside_node:
             found = id[i]
             break
 
