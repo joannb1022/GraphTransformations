@@ -22,7 +22,7 @@ graph R {
     r1 -- r3;
 }
 --
-a Y
+a *
 b c
 c Y
 d a

@@ -1,4 +1,4 @@
-a Y
+a *
 b c
 c Y
 d a

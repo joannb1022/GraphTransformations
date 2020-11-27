@@ -1,5 +1,5 @@
 import networkx as nx
-import matplotlib as plt
+import matplotlib.pyplot as plt
 
 
 def draw(G, filename):
@@ -7,7 +7,7 @@ def draw(G, filename):
     labels = nx.get_node_attributes(G, 'label')
     nx.draw(G, node_size=500, labels=labels)
     plt.draw()
-    plt.savefig(filename, format="PNG")
+    plt.savefig(filename, format="PNG", dpi=80)
 
 
 # average degree of all nodes
@@ -18,7 +18,7 @@ def avg_degree_all(G):
 
 
 # average degree of non terminal nodes
-def avg_degree_NT(G):
+def avg_degree_terminal(G):
     degs = nx.degree(G)
     lbls = dict(nx.get_node_attributes(G, 'label'))
     deg = []
@@ -33,5 +33,10 @@ def get_stats(G):
     edges = nx.number_of_edges(G)
     con_comp = nx.number_connected_components(G)
     avg_deg_all = avg_degree_all(G)
-    avg_deg_NT = avg_degree_NT(G)
-    return nodes, edges, con_comp, avg_deg_all, avg_deg_NT
+    avg_deg_T = avg_degree_terminal(G)
+    print("Liczba wierzchołków: ", nodes)
+    print("Liczba krawędzi: ", edges)
+    print("Liczba spójnych składowych: ", con_comp)
+    print("Średni stopień wierzchołków: ", avg_deg_all)
+    print("Średni stopień wierzchołków terminalnych: ", avg_deg_T)
+    print("Średnia liczba wierzchołków w spójnych składowych: ", avg_deg_all/con_comp)
