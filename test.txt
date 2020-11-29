@@ -22,7 +22,7 @@ graph R {
     r1 -- r3;
 }
 --
-a *
+a Y
 b c
 c Y
 d a
@@ -31,20 +31,52 @@ Y Y
 --
 2
 --
-Y
+X
 --
 graph R {
-    r1 [label = "Y"];
-    r2 [label = "a"];
-    r3 [label = "c"];
+    r1 [label = "X"];
+    r2 [label = "b"];
+    r3 [label = "d"];
     r1 -- r2;
     r1 -- r3;
 }
 --
-a Y
-b c
-c Y
-d a
-X c
+a b
+b X
+c d
+d X
+X b
+Y X
+--
+3
+--
+Y
+--
+graph R {
+    r1 [label = "Y"];
+    r2 [label = "X"];
+    r1 -- r2;
+}
+--
+a X
+b Y
+c X
+d Y
+X X
 Y Y
+--
+4
+--
+Y
+--
+graph R {
+    r1 [label = "c"];
+}
+--
+a c
+b c
+c c
+d c
+X c
+Y c
 --

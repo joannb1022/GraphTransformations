@@ -40,3 +40,7 @@ def get_stats(G):
     print("Średni stopień wierzchołków: ", avg_deg_all)
     print("Średni stopień wierzchołków terminalnych: ", avg_deg_T)
     print("Średnia liczba wierzchołków w spójnych składowych: ", avg_deg_all/con_comp)
+
+def nodes_gui(G):
+    nodes = nx.number_of_nodes(G)
+    return nodes

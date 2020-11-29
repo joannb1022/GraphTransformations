@@ -16,10 +16,12 @@ def find_node_in_graph(G, leftside_node):
         if val[i] == leftside_node:
             found = indx[i]
             break
+
     return found
 
 
 def adjacent_to(G, node):
+    print(list(G.neighbors(node)))
     return list(G.neighbors(node))
 
 
@@ -51,6 +53,7 @@ def production(productions, rules, G, i):
     # find left-side node in initial graph G
     found = find_node_in_graph(G, leftside_node)
 
+    if found is None: return None
     # get all nodes adjacent to left-side in G
     nodes_to_connect = adjacent_to(G, found)
 
