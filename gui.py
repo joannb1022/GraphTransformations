@@ -22,7 +22,6 @@ class MyWindow(QMainWindow):
         self.inputlabel = QLabel(self)
         self.input = QLineEdit(self)
         self.inputbutton = QPushButton(self)
-        self.productionlabel = QLabel(self)
         self.initUI()
         self.showMaximized()
 
@@ -82,10 +81,6 @@ class MyWindow(QMainWindow):
         self.legendtext.resize(300, 115)
         self.legendtext.setText(" - prawa strona produkcji\n\n\n - nowe krawędzie\n\n\n - pozostałe węzły")
 
-        # Production label
-        self.productionlabel.move(240, 10)
-        self.productionlabel.setText("Graf wejściowy")
-
     # Performing production when chosen from ComboBox
     def onActivatedComboBox(self, text):
         for s in text.split():
@@ -104,7 +99,6 @@ class MyWindow(QMainWindow):
                 globals.G = newG
                 self.image.setPixmap(QPixmap("G1.png"))
                 self.textbox.setText(statistics.get_stats(globals.G))
-                self.productionlabel.setText("Produkcja {}".format(i))
             else:
                 self.textbox.setText(
                     "Produkcja {} nie może być zrealizowana. \n\n  W grafie początkowym nie znaleziono "
