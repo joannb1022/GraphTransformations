@@ -1,0 +1,5 @@
+graph R {
+    r1 [label = "Y"];
+    r2 [label = "X"];
+    r1 -- r2;
+}
