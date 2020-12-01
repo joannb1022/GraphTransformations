@@ -1,14 +1,28 @@
-a *
-b c
-c Y
-d a
-X c
-Y Y
-
 a Y
 b c
 c Y
 d a
 X c
 Y Y
+
+a b
+b X
+c d
+d X
+X b
+Y X
+
+a X
+b Y
+c X
+d Y
+X X
+Y Y
+
+a c
+b c
+c c
+d c
+X c
+Y c
 

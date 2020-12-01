@@ -1,6 +1,22 @@
 from networkx.drawing.nx_agraph import read_dot
 
 
+# Full data preparation
+def prepare_data(filename):
+    N = parse(filename)
+
+    # G - initial graph
+    G = read_dot("data/graph.dot")
+
+    # read productions to list of tuples [(Left-side, Right-side)]
+    productions = get_prod_func(N)
+
+    # read rules to dict
+    rules = get_rules_func(N)
+    return N, G, productions, rules
+
+
+# Parsing input file, dividing into initial graph file, left sides file, right sides graphs file and rules
 def parse(file):
     with open(file) as file_in:
         with open("data/graph.dot", "w") as graph:
@@ -36,6 +52,7 @@ def parse(file):
     return prod_num
 
 
+# Reads rules from file and returns as list of dicts
 def get_rules_func(N):
     rules = [{} for _ in range(N)]
     rules_file = "data/rules.txt"
@@ -50,8 +67,8 @@ def get_rules_func(N):
     return rules
 
 
+# Reads left and right sides of productions from files and return list of tuples [(Left side, Right side)]
 def get_prod_func(N):
-
     prod = [[0 for _ in range(2)] for _ in range(N)]
     i = 0
     with open("data/left_sides.txt", "r") as left:
@@ -63,5 +80,15 @@ def get_prod_func(N):
                     P = read_dot(filename)
                     prod[i][1] = P
                     i += 1
-
     return prod
+
+
+# Parsing numbers of productions splitted by coma
+def parse_input(input):
+    prod_str = input.split(",")
+    prod_nr = []
+    for i in prod_str:
+        if not i.isnumeric():
+            return None
+        prod_nr.append(int(i))
+    return prod_nr

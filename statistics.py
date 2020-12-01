@@ -1,11 +1,38 @@
-import networkx as nx
 import matplotlib.pyplot as plt
+import networkx as nx
 
 
-def draw(G, filename):
+def draw(G, new_edges, rightside_edges, rightside_nodes, nodes_to_connect, filename):
     plt.clf()
+    pos = nx.spring_layout(G)
     labels = nx.get_node_attributes(G, 'label')
-    nx.draw(G, node_size=500, labels=labels)
+    # nodes
+    nx.draw_networkx_nodes(G, pos,
+                           nodelist=list(G.nodes),
+                           node_color='powderblue',
+                           node_size=500,
+                           alpha=0.8)
+    nx.draw_networkx_nodes(G, pos,
+                           nodelist=rightside_nodes,
+                           node_color='crimson',
+                           node_size=500,
+                           alpha=0.9)
+    nx.draw_networkx_nodes(G, pos,
+                           nodelist=nodes_to_connect,
+                           node_color='lawngreen',
+                           node_size=500,
+                           alpha=0.9)
+
+    # edges
+    nx.draw_networkx_edges(G, pos, width=1.0, alpha=0.5)
+    nx.draw_networkx_edges(G, pos,
+                           edgelist=new_edges,
+                           width=8, alpha=0.5, edge_color='lawngreen')
+    nx.draw_networkx_edges(G, pos,
+                           edgelist=rightside_edges,
+                           width=8, alpha=0.5, edge_color='crimson')
+    nx.draw_networkx_labels(G, pos, labels, font_size=16)
+    plt.axis("off")
     plt.draw()
     plt.savefig(filename, format="PNG", dpi=80)
 
@@ -34,9 +61,13 @@ def get_stats(G):
     con_comp = nx.number_connected_components(G)
     avg_deg_all = avg_degree_all(G)
     avg_deg_T = avg_degree_terminal(G)
-    print("Liczba wierzchołków: ", nodes)
-    print("Liczba krawędzi: ", edges)
-    print("Liczba spójnych składowych: ", con_comp)
-    print("Średni stopień wierzchołków: ", avg_deg_all)
-    print("Średni stopień wierzchołków terminalnych: ", avg_deg_T)
-    print("Średnia liczba wierzchołków w spójnych składowych: ", avg_deg_all/con_comp)
+    stats = "  Liczba wierzchołków: {} \n  Liczba krawędzi: {}\n  Liczba spójnych składowych: {}\n  Średni stopień " \
+            "wierzchołków: {}\n  Średni stopień wierzchołków terminalnych: {}\n  Średnia liczba wierzchołków w " \
+            "spójnych składowych: {}".format(
+             nodes, edges, con_comp, avg_deg_all, avg_deg_T, (avg_deg_all / con_comp))
+    return stats
+
+
+def nodes_gui(G):
+    nodes = nx.number_of_nodes(G)
+    return nodes
