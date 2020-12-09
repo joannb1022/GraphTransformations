@@ -34,7 +34,6 @@ def connect_graphs(F, P, rules, nodes_to_connect, i):
     indxP = list(lblsP.keys())
     valP = list(lblsP.values())
     new_edges = []
-
     for v in nodes_to_connect:
         for p in range(len(valP)):
             if valP[p] == rules[i][lblsF[v]]:

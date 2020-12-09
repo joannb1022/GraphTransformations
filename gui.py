@@ -23,7 +23,6 @@ class MyWindow(QMainWindow):
         self.input = QLineEdit(self)
         self.inputbutton = QPushButton(self)
         self.initUI()
-        self.showMaximized()
 
     def initUI(self):
 

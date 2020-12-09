@@ -1,0 +1,216 @@
+graph G_0 {
+v1 -- v2;
+v2 -- v3;
+v3 -- v1;
+v1 [label="A"];
+v2 [label="B"];
+v3 [label="C"];
+}
+--
+1
+--
+A
+--
+graph RHS_1 {
+v1 -- v2;
+v2 -- v3;
+v3 -- v1;
+v1 [label="A"];
+v2 [label="A"];
+v3 [label="A"];
+}
+--
+A A
+B *
+C *
+a A
+b *
+c *
+--
+2
+--
+A
+--
+graph RHS_2 {
+v1 -- v2;
+v2 -- v3;
+v3 -- v1;
+v1 [label="C"];
+v2 [label="B"];
+v3 [label="B"];
+}
+--
+A *
+B B
+C C
+a *
+b B
+c C
+--
+3
+--
+A
+--
+graph RHS_3 {
+v1 -- v2;
+v2 -- v3;
+v3 -- v1;
+v1 [label="A"];
+v2 [label="B"];
+v3 [label="C"];
+}
+--
+A A
+B B
+C C
+a A
+b B
+c C
+--
+4
+--
+A
+--
+graph RHS_4 {
+v1 [label="a"];
+}
+--
+A *
+B a
+C a
+a *
+b a
+c a
+--
+5
+--
+B
+--
+graph RHS_5 {
+v1 [label="b"];
+}
+--
+A b
+B *
+C b
+a b
+b *
+c b
+--
+6
+--
+C
+--
+graph RHS_6 {
+v1 [label="c"];
+}
+--
+A c
+B c
+C *
+a c
+b c
+c *
+--
+7
+--
+A
+--
+graph RHS_7 {
+v1 -- v2;
+v1 [label="B"];
+v2 [label="A"];
+}
+--
+A B
+B A
+C *
+a B
+b A
+c *
+--
+8
+--
+A
+--
+graph RHS_8 {
+v1 -- v2;
+v1 [label="C"];
+v2 [label="A"];
+}
+--
+A C
+B *
+C A
+a C
+b *
+c A
+--
+9
+--
+B
+--
+graph RHS_9 {
+v1 -- v2;
+v1 [label="A"];
+v2 [label="B"];
+}
+--
+A B
+B A
+C *
+a B
+b A
+c *
+--
+10
+--
+B
+--
+graph RHS_10 {
+v1 -- v2;
+v1 [label="C"];
+v2 [label="B"];
+}
+--
+A *
+B C
+C B
+a *
+b C
+c B
+--
+11
+--
+C
+--
+graph RHS_11 {
+v1 -- v2;
+v1 [label="A"];
+v2 [label="C"];
+}
+--
+A C
+B *
+C A
+a C
+b *
+c A
+--
+12
+--
+C
+--
+graph RHS_12 {
+v1 -- v2;
+v1 [label="B"];
+v2 [label="C"];
+}
+--
+A *
+B C
+C B
+a *
+b C
+c B
+--
