@@ -61,12 +61,21 @@ def get_stats(G):
     con_comp = nx.number_connected_components(G)
     avg_deg_all = avg_degree_all(G)
     avg_deg_T = avg_degree_terminal(G)
+<<<<<<< HEAD
     stats = "  Liczba wierzchołków: {} \n  Liczba krawędzi: {}\n  Liczba spójnych składowych: {}\n  Średni stopień " \
             "wierzchołków: {}\n  Średni stopień wierzchołków terminalnych: {}\n  Średnia liczba wierzchołków w " \
             "spójnych składowych: {}".format(
              nodes, edges, con_comp, avg_deg_all, avg_deg_T, (avg_deg_all / con_comp))
     return stats
 
+=======
+    print("Liczba wierzchołków: ", nodes)
+    print("Liczba krawędzi: ", edges)
+    print("Liczba spójnych składowych: ", con_comp)
+    print("Średni stopień wierzchołków: ", avg_deg_all)
+    print("Średni stopień wierzchołków terminalnych: ", avg_deg_T)
+    print("Średnia liczba wierzchołków w spójnych składowych: ", avg_deg_all/con_comp)
+>>>>>>> 48c682fb5a63624d05e4f0b5eef4fc147050175f
 
 def nodes_gui(G):
     nodes = nx.number_of_nodes(G)

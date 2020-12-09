@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 A A
 B *
 C *
@@ -81,4 +82,33 @@ C B
 a *
 b C
 c B
+=======
+a Y
+b c
+c Y
+d a
+X c
+Y Y
+
+a b
+b X
+c d
+d X
+X b
+Y X
+
+a X
+b Y
+c X
+d Y
+X X
+Y Y
+
+a c
+b c
+c c
+d c
+X c
+Y c
+>>>>>>> 48c682fb5a63624d05e4f0b5eef4fc147050175f
 

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 graph RHS_2 {
 v1 -- v2;
 v2 -- v3;
@@ -5,4 +6,12 @@ v3 -- v1;
 v1 [label="C"];
 v2 [label="B"];
 v3 [label="B"];
+=======
+graph R {
+    r1 [label = "X"];
+    r2 [label = "b"];
+    r3 [label = "d"];
+    r1 -- r2;
+    r1 -- r3;
+>>>>>>> 48c682fb5a63624d05e4f0b5eef4fc147050175f
 }
